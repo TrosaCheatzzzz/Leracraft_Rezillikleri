@@ -1,0 +1,481 @@
+# Tespit imzalari - toplu
+
+
+Kod icindeki literal arama desenleri.
+
+
+## __init__.py
+
+- `1.0.0`
+
+
+## auto_scanner.py
+
+- `Otomatik tam tarama sınıfı`
+- `jar_scan`
+- `memory_scan`
+- `prefetch_scan`
+- `detections`
+- `Başlık yazdır`
+- `{Fore.CYAN}{'='*70}{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚡ TÜM SİSTEM OTOM ATİK OLARAK TARANACAK{Style.RESET_ALL}`
+- `{Fore.WHITE}   • JAR Dosyaları (Derin Tarama){Style.RESET_ALL}`
+- `{Fore.WHITE}   • RAM Memory (Java Processes){Style.RESET_ALL}`
+- `{Fore.WHITE}   • Windows Prefetch (Geçmiş){Style.RESET_ALL}\n`
+- `Tüm JAR dosyalarını tara`
+- `{Fore.CYAN}{'='*70}{Style.RESET_ALL}`
+- `{Fore.CYAN}🔍 ADIM 1: JAR DOSYALARI TARANIY OR...{Style.RESET_ALL}`
+- `{Fore.YELLOW}📂 Sistem lokasyonları aranıyor...{Style.RESET_ALL}`
+- `{Fore.YELLOW}⚠ Hiç JAR dosyası bulunamadı{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✓ {len(jar_files)} JAR dosyası bulundu{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 Derin tarama başlıyor...{Style.RESET_ALL}\n`
+- `[{i}/{len(jar_files)}]`
+- `...`
+- `{Fore.WHITE}{progress} {filename}...`
+- `is_suspicious`
+- ` {Fore.RED}⚠ GHOST CLIENT!{Style.RESET_ALL}`
+- `type`
+- `JAR`
+- `result`
+- ` {Fore.GREEN}✓{Style.RESET_ALL}`
+- ` {Fore.RED}✗ Hata{Style.RESET_ALL}`
+- `{Fore.WHITE}JAR Tarama Özeti:{Style.RESET_ALL}`
+- `  • Toplam: {stats['total_scanned']}`
+- `  • {Fore.RED}Ghost Client: {stats['total_detected']}{Style.RESET_ALL}`
+- `  • {Fore.GREEN}Temiz: {stats['clean_count']}{Style.RESET_ALL}`
+- `RAM memory tara`
+- `{Fore.CYAN}🧠 ADIM 2: RAM MEMORY TARANI YOR...{Style.RESET_ALL}`
+- `{Fore.YELLOW}⚠ Admin yetkisi yok - RAM taraması atlandı{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}🔍 Java process'leri aranıyor...{Style.RESET_ALL}`
+- `{Fore.YELLOW}⚠ Çalışan Java process bulunamadı{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✓ {len(processes)} Java process bulundu{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Process: {proc['name']} (PID: {proc['pid']}){Style.RESET_ALL}`
+- `scanned`
+- `MEMORY`
+- `{Fore.WHITE}Memory Tarama Özeti:{Style.RESET_ALL}`
+- `  • Process sayısı: {len(processes)}`
+- `  • {Fore.RED}Ghost Client: {detected}{Style.RESET_ALL}`
+- `Prefetch analizi`
+- `{Fore.CYAN}📂 ADIM 3: WINDOWS PREFETCH ANALİZ EDİLİYOR...{Style.RESET_ALL}`
+- `{Fore.YELLOW}⚠ Admin yetkisi yok - Prefetch analizi atlandı{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}🔍 Prefetch dosyaları analiz ediliyor...{Style.RESET_ALL}\n`
+- `error`
+- `{Fore.YELLOW}⚠ {result['error']}{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Prefetch Analizi:{Style.RESET_ALL}`
+- `  • Java çalıştırma: {result['total_java_executions']}`
+- `  • JAR referansı: {result['total_jar_references']}`
+- `  • {Fore.RED}Şüpheli JAR: {len(result['suspicious_jars'])}{Style.RESET_ALL}`
+- `suspicious_jars`
+- `PREFETCH`
+- `Tüm tespitleri detaylı göster`
+- `{Fore.GREEN}✅ TÜM SİSTEM TEMİZ!{Style.RESET_ALL}`
+- `{Fore.GREEN}{'='*70}{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Hiçbir ghost client bulunamadı.{Style.RESET_ALL}\n`
+- `{Fore.RED}⚠️  GHOST CLIENT TESPİTLERİ - DETAYLI RAPOR{Style.RESET_ALL}`
+- `{Fore.RED}{'='*70}{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}Toplam tespit: {len(self.results['detections'])}{Style.RESET_ALL}\n`
+- `{Fore.CYAN}┌─ [{i}] {det_type} TESPİTİ{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL} {Fore.RED}🚨 Ghost Client Bulundu!{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL} {Fore.YELLOW}📍 Tam Yol:{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL}    {Fore.WHITE}{result['path']}{Style.RESET_ALL}`
+- `found_files`
+- `description`
+- `{Fore.CYAN}│{Style.RESET_ALL} {Fore.YELLOW}📋 Bulunan Kanıtlar:{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL}   {Fore.WHITE}│{Style.RESET_ALL}`
+- `{Fore.CYAN}│{Style.RESET_ALL} {Fore.YELLOW}PID:{Style.RESET_ALL} {result['pid']}`
+- `{Fore.CYAN}└{'─'*68}{Style.RESET_ALL}\n`
+- `Tam otomatik tarama başlat`
+- `{Fore.CYAN}Başlatmak için Enter'a basın...{Style.RESET_ALL}\n`
+- `{Fore.CYAN}⏱️  Toplam süre: {elapsed:.1f} saniye{Style.RESET_ALL}\n`
+
+
+## cli.py
+
+- `Komut satırı arayüzü`
+- `Argument parser oluştur`
+- `Minecraft Ghost Client Detector - URL yapıştır, tara!`
+- `daki tüm JAR`
+- `target`
+- `GitHub URL, JAR dosyası veya dizin`
+- `-f`
+- `--file`
+- `Taranacak JAR dosyası veya URL (DEPRECATED: Artık direkt yazın)`
+- `-d`
+- `--directory`
+- `Taranacak dizin`
+- `-r`
+- `--recursive`
+- `store_true`
+- `Alt dizinleri de tara`
+- `--scan-system`
+- `Bilgisayar çapında tarama yap (.minecraft, Downloads vb.)`
+- `--quick`
+- `Hızlı tarama (sadece Minecraft klasörleri)`
+- `-v`
+- `--verbose`
+- `Detaylı çıktı göster`
+- `--no-color`
+- `Renkleri kapat`
+- `Banner yazdır`
+- `Tek bir tarama sonucunu yazdır`
+- `error`
+- `{Fore.RED}❌ HATA: {result['error']}{Style.RESET_ALL}`
+- `filename`
+- `is_suspicious`
+- `⚠️  GHOST CLIENT TESPİT EDİLDİ!`
+- `{'='*60}{Style.RESET_ALL}`
+- `{Fore.YELLOW}📦 Dosya: {Fore.WHITE}{filename}`
+- `{Fore.YELLOW}📍 Yol: {Fore.WHITE}{result['path']}`
+- `found_files`
+- `description`
+- `  {Fore.RED}├─ {found['name']}{Style.RESET_ALL}`
+- `  {Fore.WHITE}│  Tam yol: {found['full_path']}{Style.RESET_ALL}`
+- `{Fore.RED}{'='*60}{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✓ Temiz: {Fore.WHITE}{filename}{Style.RESET_ALL}`
+- `Özet istatistikleri yazdır`
+- `📊 TARAMA ÖZETİ`
+- `{Fore.RED}Şüpheli dosya sayısı: {stats['total_detected']}{Style.RESET_ALL}`
+- `{Fore.GREEN}Temiz dosya sayısı: {stats['clean_count']}{Style.RESET_ALL}`
+- `{Fore.CYAN}{'='*60}{Style.RESET_ALL}\n`
+- `total_detected`
+- `{Fore.RED}⚠️  UYARI: Ghost client tespit edildi!{Style.RESET_ALL}`
+- `{Fore.YELLOW}Bu dosyalar hile içeriyor.{Style.RESET_ALL}`
+- `{Fore.YELLOW}Lütfen bu JAR dosyalarını derhal kaldırın.{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✅ Tüm dosyalar temiz görünüyor!{Style.RESET_ALL}\n`
+- `CLI'yi çalıştır`
+- `{Fore.CYAN}🔍 BİLGİSAYAR ÇAPINDA TARAMA BAŞLIYOR...{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚡ Hızlı mod: Sadece Minecraft klasörleri{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}📂 Yaygın lokasyonlar taranıyor...{Style.RESET_ALL}`
+- `{Fore.WHITE}   (.minecraft, Downloads, Desktop, Launchers){Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ Hiç JAR dosyası bulunamadı{Style.RESET_ALL}`
+- `🔍 {jar_file}`
+- `{Fore.CYAN}🌐 GITHUB REPO TESPİT EDİLDİ!{Style.RESET_ALL}`
+- `{Fore.WHITE}   {target}{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}📦 Repo'daki JAR dosyaları aranıyor...{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ Repo'da JAR dosyası bulunamadı{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 JAR'lar indiriliyor ve taranıyor...{Style.RESET_ALL}\n`
+- `{Fore.WHITE}[{i}/{len(jar_urls)}] {os.path.basename(url)}{Style.RESET_ALL}`
+- `{Fore.GREEN}  ✓ Temiz{Style.RESET_ALL}`
+- `{Fore.RED}  ❌ Hata: {e}{Style.RESET_ALL}`
+- `🖥️  BİLGİSAYARINIZDAKİ JAR'LAR DA TARANACAK...`
+- `{'='*60}{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🌐 URL'den indiriliyor: {target}{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✓ İndirme tamamlandı{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 Dosya taranıyor...{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 Dosya taranıyor: {target}{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 Dizin taranıyor: {directory}{Style.RESET_ALL}`
+- `{Fore.YELLOW}📁 Alt dizinler dahil{Style.RESET_ALL}`
+- `{Fore.RED}❌ Hata: Geçersiz hedef veya dosya/dizin bulunamadı{Style.RESET_ALL}\n`
+- `Ana giriş noktası`
+- `__main__`
+
+
+## direct_scan.py
+
+- `Banner`
+- `{Fore.RED}🔍 LERASCANNER - Minecraft Ghost Client Detector{Style.RESET_ALL}`
+- `{Fore.CYAN}{'='*70}{Style.RESET_ALL}\n`
+- `Status mesajı`
+- `{Fore.YELLOW}⏳ {message}...{Style.RESET_ALL}`
+- `Ana fonksiyon - direkt tarama`
+- `{Fore.WHITE}Sistem otomatik olarak taranıyor...{Style.RESET_ALL}\n`
+- `JAR dosyaları aranıyor`
+- `{Fore.CYAN}Taranıyor...{Style.RESET_ALL}\n`
+- `...`
+- `is_suspicious`
+- `JAR`
+- `{Fore.GREEN}✓ JAR tarama tamamlandı{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ JAR dosyası bulunamadı{Style.RESET_ALL}\n`
+- `RAM memory taranıyor`
+- `{Fore.GREEN}✓ {len(processes)} Java process bulundu{Style.RESET_ALL}\n`
+- `pid`
+- `name`
+- `scanned`
+- `detections`
+- `MEMORY`
+- ` {Fore.RED}⚠ GHOST CLIENT!{Style.RESET_ALL}`
+- ` {Fore.GREEN}✓{Style.RESET_ALL}`
+- `{Fore.YELLOW}⚠ Çalışan Java process bulunamadı{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ RAM tarama atlandı (admin gerekli){Style.RESET_ALL}\n`
+- `Prefetch analiz ediliyor`
+- `{Fore.CYAN}Windows Prefetch dosyaları analiz ediliyor...{Style.RESET_ALL}\n`
+- `error`
+- `suspicious_jars`
+- `PREFETCH`
+- `{Fore.GREEN}✓ Prefetch analizi tamamlandı{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ Prefetch analizi atlandı (admin gerekli){Style.RESET_ALL}\n`
+- `{Fore.CYAN}TARAMA TAMAMLANDI{Style.RESET_ALL}`
+- `{Fore.WHITE}Süre: {elapsed:.1f} saniye{Style.RESET_ALL}`
+- `{Fore.GREEN}{'='*70}{Style.RESET_ALL}`
+- `{Fore.GREEN}✅ SİSTEM TEMİZ{Style.RESET_ALL}`
+- `{Fore.GREEN}{'='*70}{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Hiçbir ghost client tespit edilmedi.{Style.RESET_ALL}\n`
+- `{Fore.RED}{'='*70}{Style.RESET_ALL}`
+- `{Fore.RED}⚠️  GHOST CLIENT TESPİT EDİLDİ!{Style.RESET_ALL}`
+- `{Fore.RED}{'='*70}{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}Toplam tespit: {len(all_detections)}{Style.RESET_ALL}\n`
+- `{Fore.CYAN}BULUNAN CLIENT:{Style.RESET_ALL}\n`
+- `{Fore.WHITE}[{i}] {det_type} TESPİTİ:{Style.RESET_ALL}`
+- `   {Fore.RED}📦 Client: Doomsday Client{Style.RESET_ALL}`
+- `   {Fore.WHITE}Dosya Yolu: {result['path']}{Style.RESET_ALL}`
+- `   {Fore.RED}🧠 Client: Doomsday Client (RAM'de Aktif){Style.RESET_ALL}`
+- `   {Fore.WHITE}Process: {result['name']} (PID: {result['pid']}){Style.RESET_ALL}`
+- `   {Fore.RED}📂 Client: Doomsday Client (Geçmişte Çalıştırılmış){Style.RESET_ALL}`
+- `   {Fore.WHITE}Dosya Yolu: {result['jar_path']}{Style.RESET_ALL}`
+- `{Fore.CYAN}Çıkmak için Enter'a basın...{Style.RESET_ALL}`
+- `__main__`
+
+
+## downloader.py
+
+- `JAR dosyalarını URL'den indiren sınıf`
+- `Verilen string bir URL mi kontrol et`
+- `http://`
+- `https://`
+- `/releases/download/`
+- `/blob/`
+- `/raw/`
+- `https?://github\.com/[^/]+/[^/]+/?$`
+- `GitHub URL'den user ve repo adını çıkar`
+- `github\.com/([^/]+)/([^/]+)`
+- `user`
+- `repo`
+- `  → GitHub API kullanılıyor: {user}/{repo}`
+- `https://api.github.com/repos/{user}/{repo}/releases`
+- `User-Agent`
+- `LeraScanner/1.0`
+- `assets`
+- `name`
+- `.jar`
+- `browser_download_url`
+- `  → Bulundu: {asset['name']} (Release: {release.get('tag_name', 'unknown')})`
+- `  ⚠ Release kontrolü başarısız: {e}`
+- `https://api.github.com/repos/{user}/{repo}`
+- `default_branch`
+- `main`
+- `tree`
+- `path`
+- `type`
+- `blob`
+- `https://github.com/{user}/{repo}/raw/{default_branch}/{item['path']}`
+- `  → Bulundu: {item['path']} (Repository)`
+- `  ⚠ Repository taraması başarısız: {e}`
+- `ini raw download URL`
+- `github.com`
+- `URL'den dosya adını çıkar`
+- `downloaded.jar`
+- `  → Orijinal URL: {url}`
+- `  → Dönüştürülen URL: {download_url}`
+- `lera_scanner_`
+- `  → İndiriliyor: {filename}...`
+- `LeraScanner/1.0 (Minecraft Ghost Client Detector)`
+- `wb`
+- `  → İndirildi: {size_mb:.2f} MB`
+- `  → Geçici yol: {temp_path}`
+- `HTTP Hatası {e.code}: {e.reason}`
+- `URL Hatası: {e.reason}`
+- `İndirme hatası: {str(e)}`
+- `İndirilen geçici dosyayı sil`
+
+
+## jar_scanner.py
+
+- `Ghost client imzası - aranan dosyalar`
+- `Doomsday Client`
+- `l.png`
+- `Dosya adının tam eşleşme kontrolü`
+- `\\`
+- `JAR dosyalarını analiz eden sınıf`
+- `path`
+- `filename`
+- `is_suspicious`
+- `found_files`
+- `all_files_scanned`
+- `error`
+- `Geçerli bir JAR/ZIP dosyası değil`
+- `  → {len(file_list)} dosya bulundu, derin tarama yapılıyor...`
+- `name`
+- `actual_name`
+- `full_path`
+- `description`
+- `location`
+- `(root)`
+- `  → 🚨 BULUNDU: {file_path}`
+- `Dizin bulunamadı: {directory}`
+- `*.jar`
+- `Dizinde JAR dosyası bulunamadı`
+- `🔍 Taranıyor: {jar_file.name}`
+- `Tarama istatistiklerini döndürür`
+- `total_scanned`
+- `total_detected`
+- `clean_count`
+
+
+## memory_scanner.py
+
+- `Java process'lerini tarayıp memory'de ghost client imzalarını arar`
+- `Doomsday`
+- `doomsday`
+- `DOOMSDAY`
+- `Admin yetkisi kontrolü`
+- `Çalışan Java process'lerini bul`
+- `pid`
+- `name`
+- `create_time`
+- `java`
+- `javaw`
+- `Process enumeration error: {e}`
+- `Bir process'in memory'sini tara`
+- `scanned`
+- `detections`
+- `error`
+- `Admin yetkisi gerekli`
+- `Process açılamadı`
+- `signature`
+- `utf-8`
+- `ignore`
+- `address`
+- `Tüm Java process'lerini tara`
+- `Bu özellik için admin yetkisi ile çalıştırmanız gerekiyor!`
+- `processes`
+- `Taranıyor: PID {proc['pid']} - {proc['name']}`
+
+
+## menu_cli.py
+
+- `Ana menü arayüzü`
+- `Ekranı temizle`
+- `cls`
+- `nt`
+- `clear`
+- `Banner yazdır`
+- `Ana menüyü yazdır`
+- `Otomatik tam tarama`
+- `JAR dosyası tara`
+- `{Fore.YELLOW}🔍 JAR DOSYASI TARAMA{Style.RESET_ALL}\n`
+- `{Fore.CYAN}JAR dosyasının yolunu girin: {Style.RESET_ALL}`
+- `is_suspicious`
+- `{Fore.RED}{'='*60}{Style.RESET_ALL}`
+- `{Fore.RED}⚠️  GHOST CLIENT TESPİT EDİLDİ!{Style.RESET_ALL}`
+- `found_files`
+- `description`
+- `  {Fore.RED}├─ {found['name']}{Style.RESET_ALL}`
+- `  {Fore.WHITE}│  Yol: {found['full_path']}{Style.RESET_ALL}`
+- `{Fore.GREEN}✅ TEMİZ - Ghost client bulunamadı{Style.RESET_ALL}\n`
+- `Sistem çapında JAR tara`
+- `{Fore.YELLOW}🖥️  SİSTEM ÇAPINDA TARAMA{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Taranacak lokasyonlar:{Style.RESET_ALL}`
+- `  • .minecraft/mods`
+- `  • Downloads`
+- `  • Desktop`
+- `  • CurseForge, MultiMC, PrismLauncher\n`
+- `{Fore.CYAN}Başlatmak için Enter'a basın...{Style.RESET_ALL}`
+- `{Fore.RED}⚠ GHOST CLIENT: {result['filename']}{Style.RESET_ALL}`
+- `   Yol: {result['path']}\n`
+- `{Fore.CYAN}{'='*60}{Style.RESET_ALL}`
+- `RAM memory tara`
+- `{Fore.YELLOW}🧠 RAM MEMORY TARAMA{Style.RESET_ALL}\n`
+- `{Fore.RED}❌ UYARI: Admin yetkisi gerekli!{Style.RESET_ALL}`
+- `{Fore.YELLOW}Programı 'Yönetici olarak çalıştır' ile açın.{Style.RESET_ALL}\n`
+- `{Fore.CYAN}🔍 Java process'leri aranıyor...{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}⚠ Çalışan Java process bulunamadı{Style.RESET_ALL}`
+- `{Fore.WHITE}Minecraft açık değil veya Java process'i yok.{Style.RESET_ALL}\n`
+- `{Fore.GREEN}✓ {len(processes)} Java process bulundu{Style.RESET_ALL}\n`
+- `{Fore.CYAN}Process: {proc['name']} (PID: {proc['pid']}){Style.RESET_ALL}`
+- `scanned`
+- `detections`
+- `   Process: {result['name']} (PID: {result['pid']})`
+- `   Tespit sayısı: {len(result['detections'])}\n`
+- `{Fore.GREEN}✅ TEMİZ - Memory'de ghost client bulunamadı{Style.RESET_ALL}\n`
+- `Prefetch analizi`
+- `{Fore.YELLOW}📂 WINDOWS PREFETCH ANALİZİ{Style.RESET_ALL}\n`
+- `{Fore.WHITE}Windows Prefetch dosyaları Java geçmişini içerir.{Style.RESET_ALL}`
+- `{Fore.WHITE}Bu özellik geçmişte çalıştırılan JAR'ları bulur.{Style.RESET_ALL}\n`
+- `error`
+- `{Fore.RED}❌ {result['error']}{Style.RESET_ALL}\n`
+- `{Fore.CYAN}{'='*60}{Style.RESET_ALL}\n`
+- `suspicious_jars`
+- `{Fore.RED}⚠️  ŞÜPHELİ JAR'LAR BULUNDU:{Style.RESET_ALL}\n`
+- `{Fore.YELLOW}• {jar['jar_path']}{Style.RESET_ALL}`
+- `  Anahtar kelime: {jar['keyword']}`
+- `  Prefetch: {jar['prefetch']}\n`
+- `{Fore.GREEN}✅ Şüpheli JAR bulunamadı{Style.RESET_ALL}\n`
+- `Hakkında`
+- `{Fore.YELLOW}Devam etmek için Enter'a basın...{Style.RESET_ALL}`
+- `Ana döngü`
+- `{Fore.CYAN}Seçiminiz: {Style.RESET_ALL}`
+- `Ana giriş noktası`
+- `__main__`
+
+
+## prefetch_scanner.py
+
+- `Windows Prefetch dosyalarını analiz eder`
+- `C:\Windows\Prefetch`
+- `Admin yetkisi kontrolü`
+- `Prefetch klasörüne erişim kontrolü`
+- `Prefetch dosyalarında JAR referanslarını bul`
+- `error`
+- `Bu özellik için admin yetkisi ile çalıştırmanız gerekiyor!`
+- `Prefetch klasörüne erişim yok: {self.PREFETCH_PATH}`
+- `*.pf`
+- `  → {len(pf_files)} Prefetch dosyası bulundu`
+- `rb`
+- `utf-16-le`
+- `ignore`
+- `.jar`
+- `JAVA`
+- `prefetch_file`
+- `found_jars`
+- `modified_time`
+- `  ⚠ {os.path.basename(pf_file)}: {e}`
+- `Prefetch taraması başarısız: {e}`
+- `String'den JAR yollarını çıkar`
+- `\x00`
+- `JAR geçmişini analiz et`
+- `total_java_executions`
+- `total_jar_references`
+- `suspicious_jars`
+- `doomsday`
+- `ghost`
+- `client`
+- `cheat`
+- `hack`
+- `vape`
+- `liquidbounce`
+- `wurst`
+- `meteor`
+- `jar_path`
+- `keyword`
+- `prefetch`
+- `last_execution`
+
+
+## system_scanner.py
+
+- `Bilgisayar çapında JAR dosyalarını bulan sınıf`
+- `Tüm disk sürücülerini bul (C:, D:, E: vb.)`
+- `{letter}:\\`
+- `  → {len(drives)} disk bulundu: {', '.join(drives)}`
+- `  → JAR dosyaları aranıyor...`
+- `Windows`
+- `Program Files`
+- `Program Files (x86)`
+- `ProgramData`
+- `$Recycle.Bin`
+- `System Volume Information`
+- `Recovery`
+- `Intel`
+- `AMD`
+- `NVIDIA`
+- `PerfLogs`
+- `AppData\\Local\\Temp`
+- `Temp`
+- `tmp`
+- `.jar`
+- `    {Fore.GREEN}• {len(jar_files)} JAR bulundu...{Style.RESET_ALL}`
+- `\r`
+- `    ⚠ Bazı klasörlere erişim reddedildi`
+- `    ⚠ Hata: {e}`
+
