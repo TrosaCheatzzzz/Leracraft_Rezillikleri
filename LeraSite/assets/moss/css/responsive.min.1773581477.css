@@ -1,0 +1,269 @@
+@media all and (min-width: 992px) {
+    .sticky-gameixa {
+        position: sticky;
+        left: 0;
+        top: 6px;
+    }
+
+    .pc {
+        display: block;
+    }
+
+    .mobil {
+        display: none;
+    }
+
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .col-news {
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+    .col-other-news {
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    article.news .card-text {
+        overflow: hidden;
+        height: 168px !important;
+    }
+
+    .btn-account-edit {
+        padding-right: .1875rem !important;
+    }
+
+    .btn-account-password {
+        padding-left: .1875rem !important;
+    }
+
+    .store-cards .col-md-3:nth-child(n+5) {
+        margin-top: 1rem;
+    }
+
+    /*SCROLLBAR*/
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        background-color: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #a8a8a8;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #787878;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .pc {
+        display: none;
+    }
+
+    .mobil {
+        display: block;
+    }
+
+    .navbar-brand img {
+        height: 28px !important;
+    }
+
+    .navbar-online {
+        display: none;
+    }
+
+    .server-online-info {
+        font-size: 1.25rem !important;
+    }
+
+    .navbar-ip {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-version {
+        display: none;
+    }
+
+    .navbar-dark .navbar-nav {
+        text-align: left !important;
+    }
+
+    .navbar-dark .navbar-collapse {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .navbar-dark .navbar-nav .nav-item {
+        margin: 0;
+    }
+
+    .navbar-dark .navbar-nav .nav-item.active .nav-link, .navbar-dark .navbar-nav .nav-item:hover .nav-link, .navbar-dark .navbar-nav .nav-item:focus .nav-link {
+        border-radius: 0 !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-item:first-child {
+        margin-top: .5rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: .5rem .75rem;
+    }
+
+    .navbar-dark .navbar-nav .nav-item.active, .navbar-dark .navbar-nav .nav-item:hover, .navbar-dark .navbar-nav .nav-item:focus {
+        border-radius: 0;
+    }
+
+    .carousel-caption {
+        bottom: 30px;
+    }
+
+    .carousel-caption > h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption > p {
+        font-size: 1.125rem;
+    }
+
+    .carousel-indicators {
+        bottom: 0;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 15%;
+    }
+
+    .carousel-control-prev .fa, .carousel-control-next .fa {
+        font-size: 2rem;
+    }
+
+    article.news .card-text {
+        overflow: hidden;
+        height: auto !important;
+    }
+
+    .btn-account-edit {
+        margin-bottom: .75rem !important;
+    }
+
+    .store-cards .col-md-3:not(:first-child) {
+        margin-top: 1.5rem;
+    }
+
+    .header {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .mobile-danger-button {
+        position: absolute;
+        right: 0px;
+    }
+
+    .mobile-success-button {
+        position: absolute;
+        left: 0;
+    }
+
+    .gameixa-container {
+        padding-bottom: 3rem !important;
+    }
+
+    .gameixa-cta-top {
+        margin-bottom: 3rem !important;
+    }
+
+    .gameixa-social-media {
+        margin: auto !important;
+        text-align: center !important;
+    }
+
+    .gameixa-footer-container {
+        padding-left: .7rem !important;
+    }
+
+    .md\:block {
+        display: block !important;
+    }
+
+    .gameixa-columns .checkoutItemName {
+        grid-column: span 3 / span 3
+    }
+
+    .gameixa-columns .col-span-3 {
+        grid-column: span 4 / span 4;
+    }
+
+    .gameixa-columns .col-span-1 {
+        grid-column: span 2 / span 2;
+    }
+
+    .sWheel-wrapper {
+        width: 300px !important;
+        height: 300px !important;
+        margin: auto;
+    }
+
+    .superwheel {
+        width: 300px !important;
+        height: 300px !important;
+        margin: auto;
+    }
+
+    .w-max {
+        width: max-content;
+    }
+
+    .gameixa-overflow {
+        overflow-x: scroll;
+    }
+
+    .gameixa-news-img {
+        width: 85% !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 25rem;
+    }
+
+    .gameixa-news-img img {
+        border-radius: 24px;
+    }
+
+    .voonos-blog {
+        height: 19rem !important;
+    }
+
+    .gameixa-mobile-block {
+        display: block !important;
+        text-align: center;
+        margin: auto;
+    }
+
+    .gameixa-money {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gameixa-table-center {
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .overflow-x-auto {
+        overflow-x: auto;
+    }
+
+}

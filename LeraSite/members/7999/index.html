@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="LeaderOS">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?cache=1789413028">
+
+    <title>Hitbarries - LeraCraft</title>
+    <meta name="description" content="Türkiyenin Açık Ara En iyi TrapPvP ve BoxMining sunucusu"/>
+    <link rel="canonical" href="https://leracraft.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Hitbarries - LeraCraft"/>
+    <meta property="og:description" content="Türkiyenin Açık Ara En iyi TrapPvP ve BoxMining sunucusu"/>
+    <meta property="og:url" content="https://leracraft.com"/>
+    <meta property="og:site_name" content="LeraCraft"/>
+    
+    <!-- CSRF -->
+    <meta name="csrf-token" content="4e516bf97c7a8fe1d71900113f10d19bba64e724251fc231ac4d2acd3a1507d4">
+
+    <!-- Flickity -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css">
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- EXTRAS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/moss/css/style.1773581477.css">
+    <link rel="stylesheet" type="text/css" href="/assets/moss/css/responsive.min.1773581477.css">
+
+    <!-- THEMES -->
+    <link rel="stylesheet" type="text/css" href="/assets/moss/css/plugins/ckeditor/content-styles.1773581477.css">
+
+    <!-- SCRIPTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.2/animations/scale.min.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-tooltip@1.2.0/dist/cdn.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs-collapse/3.14.8/cdn.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs-intersect/3.14.8/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+        
+    <!-- CUSTOM CSS -->
+    <style type="text/css">
+            </style>
+
+    <!-- ROLE CSS -->
+    <style type="text/css">
+                
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </style>
+
+    
+    <style>
+        :root {
+            --color-background: #f6f9fc;
+            --voonos-slate-50: 248 250 252;
+            --voonos-slate-100: 241 245 249;
+            --voonos-slate-200: 226 232 240;
+            --voonos-slate-300: 203 213 225;
+            --voonos-slate-400: 148 163 184;
+            --voonos-slate-500: 100 116 139;
+            --voonos-slate-600: 71 85 105;
+            --voonos-slate-700: 51 65 85;
+            --voonos-slate-800: 30 41 59;
+            --voonos-slate-900: 15 23 42;
+        --color-veen: 8 47 73;--voonos-emerald-50: 225 245 254;--voonos-emerald-100: 179 229 252;--voonos-emerald-200: 129 212 250;--voonos-emerald-300: 79 195 247;--voonos-emerald-400: 41 182 246;--voonos-emerald-500: 3 169 244;--voonos-emerald-600: 3 155 229;--voonos-emerald-700: 3 145 209;--voonos-emerald-800: 2 133 186;--voonos-emerald-900: 3 120 163;--tw-gradient-from: 3 169 244;        }
+    </style>
+
+    </head>
+<body x-data="body()" :class="{'overflow-hidden':modals}">
+<div id="app">
+    <header class="">
+    <div class="voonos-container flex justify-between h-full">
+        <div class="flex gap-8">
+            <div class="hidden lg:block">
+                <a href="/">
+                    <img class="mt-8" width="135" src="/assets/core/images/uploads/f57774a3521aadb95fa78b80e44ef9dc.png?cache=1789413028" alt="Logo">
+                </a>
+            </div>
+            <div class="lg:hidden center">
+                <div @click="toggleModal('menuModal')" class="p-6 cursor-pointer text-white text-xl">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center text-white/75 py-3">
+                                                            <a href="/" class="nav-item ">
+                            Anasayfa                        </a>
+                                                                                <a href="/store" class="nav-item ">
+                            Mağaza                        </a>
+                                                                                <a href="/support/tickets" class="nav-item ">
+                            Destek                        </a>
+                                                                                <a href="/credits/charge" class="nav-item ">
+                            Kredi Satın Al                        </a>
+                                                                                <a href="/credits/send" class="nav-item ">
+                            Kredi Gönder                        </a>
+                                                                                <a href="https://leracraft.com/punishments" class="nav-item ">
+                            Cezalar                        </a>
+                                                </nav>
+        </div>
+        <div class="flex gap-4 items-center">
+                            <a href="/login/" class="rounded-2xl center w-10 h-10 bg-emerald-100">
+                    <i class="fas fa-sign-in text-emerald-900"></i>
+                </a>
+                                    <a href="/register/" class="py-3 px-6 rounded-[1.25rem] text-white font-semibold bg-emerald-500 tracking-wide">
+                        Kayıt Ol                    </a>
+                                    </div>
+    </div>
+</header>
+    
+    <main class="main" role="main">
+        
+<div class="voonos-container grid lg:grid-cols-12 gap-6 py-32">
+    <div class="lg:col-span-12">
+        <h1 class="text-2xl text-slate-900 font-semibold">
+            Oyuncu - Hitbarries        </h1>
+        <div class="bg-white border border-slate-200/50 rounded-3xl p-8 mt-6">
+            <div class="flex justify-between items-center">
+                <div class="flex gap-3 items-center">
+                    <i class="fas fa-info -mt-1 text-2xl text-slate-500"></i>
+                    <span class="text-lg font-semibold text-slate-800 tracking-wide">
+                        Basic Information                    </span>
+                </div>
+            </div>
+            <div class="mt-4 p-3">
+                <div class="flex gap-3">
+                    <div>
+                        <img
+	class="lazyload rounded-3xl"
+	data-src="https://minotar.net/helm/Hitbarries/128.png"
+	src="/assets/core/images/loaders/head.png"
+	alt="Hitbarries"	width="64"	height="64">                    </div>
+                    <div class="flex flex-col justify-center">
+                        <div class="text-slate-800 tracking-wide text-lg font-semibold flex gap-2 items-center username__mvip"">
+                        Hitbarries                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between">
+                <div class="w-full max-w-md border-t-2 border-slate-200/25 py-3 mt-2">
+                    <div class="grid grid-cols-2 gap-4 py-2">
+                        <span class="text-slate-500/75">
+                            Kayıt Tarihi:
+                        </span>
+                        <p class="text-slate-700 font-medium">
+                            4 Eyl 2026 16:35                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 py-2">
+                        <span class="text-slate-500/75">
+                            Yetki:
+                        </span>
+                        <p class="text-slate-700 font-medium">
+                                                            <span class="role__default role__mvip">
+                                    MVIP                                </span>
+                                                    </p>
+                    </div>
+                                    </div>
+                                    <div>
+                        <div class="w-52 border-2 border-slate-200/50 p-6 rounded-2xl relative overflow-hidden group transition">
+                            <div class="relative">
+                                <i class="fas fa-coins text-yellow-400 text-2xl"></i>
+                                <span class="text-xl font-bold text-slate-900 ml-2 tracking-wide">
+                                    520.00                                </span>
+                                <p class="text-slate-400 text-sm mt-2">
+                                    Kredi                                </p>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+    <div class="grid-cols-2 grid gap-8 mt-12">
+        <div class=""></div>
+    </div>
+    </div>
+</div>
+    </main>
+
+        <footer>
+    <div class="relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 shadow-3xl w-32 shadow-veen/20"></div>
+        <div class="absolute bottom-0 right-0 shadow-3xl w-32 shadow-emerald-500/20"></div>
+        <div class="gameixa-footer-container voonos-container grid grid-cols-12 gap-6 py-20 relative z-20">
+            <div class="col-span-12 lg:col-span-5">
+                <h5 class="text-xl font-semibold text-slate-900 tracking-wide">
+                    <span class="text-emerald-600 font-bold">
+                        LeraCraft                    </span>
+                </h5>
+                <div class="mt-4">
+                    <div class="text-slate-500">
+                                                    <p>Yüksek kaliteli sunuculara ve arkadaş canlısı topluluğa sahip bir Minecraft sunucusu!<br><br>LeracCraft is not affiliated with Mojang AB.</p>                                            </div>
+                </div>
+		            <div class="flex gap-3 mt-6">
+			            				            <div @click="toggleModal('langModal')" class="rounded-xl py-3 px-6 text-sm font-semibold text-emerald-700 bg-emerald-900/10 cursor-pointer hover:bg-emerald-900/20">
+					            Türkçe				            </div>
+			            			            
+			            		            </div>
+            </div>
+	        
+		        			        <div class="col-span-12 lg:col-span-2">
+				        <h5 class="text-xl font-semibold text-slate-900 tracking-wide">Hızlı Menü</h5>
+				        					        <ul class="mt-4 flex flex-col gap-3">
+						        							        <li>
+								        <a href="/" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        										        <i class="fas fa-home" style="margin-right: 0.325rem;"></i>
+									        									        Anasayfa								        </a>
+							        </li>
+						        							        <li>
+								        <a href="/store" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        										        <i class="fas fa-shopping-cart" style="margin-right: 0.325rem;"></i>
+									        									        Mağaza								        </a>
+							        </li>
+						        							        <li>
+								        <a href="/help" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        										        <i class="fas fa-question-circle" style="margin-right: 0.325rem;"></i>
+									        									        Yardım								        </a>
+							        </li>
+						        							        <li>
+								        <a href="/support/tickets" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        										        <i class="fas fa-life-ring" style="margin-right: 0.325rem;"></i>
+									        									        Destek								        </a>
+							        </li>
+						        					        </ul>
+				        			        </div>
+		        			        <div class="col-span-12 lg:col-span-2">
+				        <h5 class="text-xl font-semibold text-slate-900 tracking-wide">Sosyal Medya</h5>
+				        					        <ul class="mt-4 flex flex-col gap-3">
+						        							        <li>
+								        <a href="" class="text-slate-800/75 hover:text-slate-800 hover-after-link" target="_blank">
+									        										        <i class="fab fa-instagram" style="margin-right: 0.325rem;"></i>
+									        									        Instagram								        </a>
+							        </li>
+						        							        <li>
+								        <a href="https://www.youtube.com/@LeraCraftTR" class="text-slate-800/75 hover:text-slate-800 hover-after-link" target="_blank">
+									        										        <i class="fab fa-youtube" style="margin-right: 0.325rem;"></i>
+									        									        YouTube								        </a>
+							        </li>
+						        							        <li>
+								        <a href="https://www.tiktok.com/@leracraft.com" class="text-slate-800/75 hover:text-slate-800 hover-after-link" target="_blank">
+									        										        <i class="fab fa-tiktok" style="margin-right: 0.325rem;"></i>
+									        									        TikTok								        </a>
+							        </li>
+						        							        <li>
+								        <a href="https://discord.gg/lera" class="text-slate-800/75 hover:text-slate-800 hover-after-link" target="_blank">
+									        										        <i class="fab fa-discord" style="margin-right: 0.325rem;"></i>
+									        									        Discord								        </a>
+							        </li>
+						        					        </ul>
+				        			        </div>
+		        			        <div class="col-span-12 lg:col-span-2">
+				        <h5 class="text-xl font-semibold text-slate-900 tracking-wide">Bağlantılar</h5>
+				        					        <ul class="mt-4 flex flex-col gap-3">
+						        							        <li>
+								        <a href="/terms" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        									        Hizmet Şartları								        </a>
+							        </li>
+						        							        <li>
+								        <a href="/privacy" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        									        Gizlilik Politikası								        </a>
+							        </li>
+						        							        <li>
+								        <a href="https://zentoriamc.net/iletisim" class="text-slate-800/75 hover:text-slate-800 hover-after-link" >
+									        									        İletişim								        </a>
+							        </li>
+						        					        </ul>
+				        			        </div>
+		                </div>
+    </div>
+    <div class="bg-emerald-900">
+        <div class="voonos-container py-6 items-center text-center">
+            <div class="text-emerald-50/75 font-medium text-sm tracking-wide">
+                Copyright
+                <span class="font-bold text-emerald-50">
+                    LeraCraft                </span>
+                Tüm hakları saklıdır. &copy; 2026            </div>
+            <div class="flex center mt-4">
+		            <div class="rounded-xl py-2 px-4 text-sm font-medium bg-emerald-400/10 text-emerald-100 transition hover:bg-emerald-400/20">
+			            <a href="https://www.leaderos.com.tr" target="_blank" id="powered_by_leaderos">Powered by <strong>LeaderOS</strong></a><script>
+						var is_error;
+						var interval = setInterval(function() {
+							if (is_error) {
+								clearInterval(interval);
+								return false;
+							}
+							
+							var brand_el = document.getElementById("powered_by_leaderos");
+							var is_brand_visible = true;
+							
+							if (brand_el) {
+								var style = window.getComputedStyle(brand_el);
+								if (brand_el.offsetParent === null) {
+									is_brand_visible = false;
+								} else if (style.display === "none") {
+									is_brand_visible = false;
+								} else if (style.visibility === "hidden") {
+									is_brand_visible = false;
+								}
+							} else {
+								is_brand_visible = false;
+							}
+							
+							if (!is_brand_visible) {
+								is_error = true;
+								document.body.innerHTML = "<iframe src='https://www.leaderos.com.tr/powered_by_leaderos.php' style='border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%'></iframe>";
+							}
+						}, 1000);
+					</script>		            </div>
+                <a href="https://www.gameixa.com" class="rounded-xl py-2 px-4 text-sm font-medium bg-emerald-400/10 text-emerald-100 transition hover:bg-emerald-400/20 ml-2">
+                    GAMEIXA
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="fixed z-50 inset-0" x-show="modals">
+    <div class="absolute inset-0 bg-black/60">
+        <div class="absolute inset-0 bg-veen/25 backdrop-blur-sm"></div>
+    </div>
+    <div class="relative z-20 w-full h-full" id="modals">
+        <div class="w-full h-full relative z-20" x-ref="menuModal" style="display: none">
+            <div class="absolute inset-0" @click="toggleModal('menuModal')"></div>
+            <div class="flex items-start justify-center relative">
+                <div class="bg-white p-12 w-full">
+                    <div class="flex items-center justify-between w-full mb-6">
+                        <div class="text-slate-800 text-xl font-semibold">
+                            Menu                        </div>
+                        <div class="text-end" @click="toggleModal('menuModal')">
+                            <i class="fas fa-x"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid gap-3">
+                                                    <a href="/" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Anasayfa                                                            </a>
+                                                    <a href="/store" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Mağaza                                                            </a>
+                                                    <a href="/support/tickets" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Destek                                                            </a>
+                                                    <a href="/credits/charge" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Kredi Satın Al                                                            </a>
+                                                    <a href="/credits/send" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Kredi Gönder                                                            </a>
+                                                    <a href="https://leracraft.com/punishments" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 hover:bg-slate-200/30 cursor-pointer">
+                                Cezalar                                                            </a>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full relative z-20" x-ref="langModal" style="display: none">
+            <div class="absolute inset-0" @click="toggleModal('langModal')"></div>
+            <div class="flex items-start justify-center relative">
+                <div class="bg-white rounded-3xl p-12 mt-32 w-full max-w-2xl">
+                    <div class="flex items-center justify-between w-full mb-6">
+                        <div class="text-slate-800 text-xl font-semibold">
+                            Dil Seçin                        </div>
+                        <div class="text-end" @click="toggleModal('langModal')">
+                            <i class="fas fa-x"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid gap-3 overflow-y-auto max-h-[500px]">
+                                                    <a href="?lang=cs" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Čeština                                                            </a>
+                                                    <a href="?lang=de" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Deutsch                                                            </a>
+                                                    <a href="?lang=en" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                English                                                            </a>
+                                                    <a href="?lang=es" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Español                                                            </a>
+                                                    <a href="?lang=fr" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Français                                                            </a>
+                                                    <a href="?lang=hi" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                हिन्दी                                                            </a>
+                                                    <a href="?lang=hu" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Magyar                                                            </a>
+                                                    <a href="?lang=it" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Italiano                                                            </a>
+                                                    <a href="?lang=ja" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                日本語                                                            </a>
+                                                    <a href="?lang=nl" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Nederlands                                                            </a>
+                                                    <a href="?lang=no" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Norsk                                                            </a>
+                                                    <a href="?lang=pl" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Polski                                                            </a>
+                                                    <a href="?lang=pt_BR" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Português (Brasil)                                                            </a>
+                                                    <a href="?lang=ro" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Română                                                            </a>
+                                                    <a href="?lang=ru" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Русский                                                            </a>
+                                                    <a href="?lang=sv" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Svenska                                                            </a>
+                                                    <a href="?lang=tr" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 bg-slate-200/20">
+                                Türkçe                                                                    <div class="w-3 h-3 rounded bg-emerald-500"></div>
+                                                            </a>
+                                                    <a href="?lang=vi" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                Tiếng Việt                                                            </a>
+                                                    <a href="?lang=zh_CN" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                中文                                                            </a>
+                                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full relative z-20" x-ref="currencyModal" style="display: none">
+            <div class="absolute inset-0" @click="toggleModal('currencyModal')"></div>
+            <div class="flex items-start justify-center relative">
+                <div class="bg-white rounded-3xl p-12 mt-32 w-full max-w-2xl">
+                    <div class="flex items-center justify-between w-full mb-6">
+                        <div class="text-slate-800 text-xl font-semibold">
+                            Para Birimi Seçin                        </div>
+                        <div class="text-end" @click="toggleModal('currencyModal')">
+                            <i class="fas fa-x"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid gap-3 overflow-y-auto max-h-[500px]">
+                                                    <a href="?currency=AUD" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                AUD                                                            </a>
+                                                    <a href="?currency=BRL" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                BRL                                                            </a>
+                                                    <a href="?currency=CAD" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                CAD                                                            </a>
+                                                    <a href="?currency=CNY" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                CNY                                                            </a>
+                                                    <a href="?currency=CZK" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                CZK                                                            </a>
+                                                    <a href="?currency=DKK" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                DKK                                                            </a>
+                                                    <a href="?currency=EUR" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                EUR                                                            </a>
+                                                    <a href="?currency=GBP" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                GBP                                                            </a>
+                                                    <a href="?currency=HUF" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                HUF                                                            </a>
+                                                    <a href="?currency=INR" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                INR                                                            </a>
+                                                    <a href="?currency=JPY" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                JPY                                                            </a>
+                                                    <a href="?currency=NOK" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                NOK                                                            </a>
+                                                    <a href="?currency=NZD" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                NZD                                                            </a>
+                                                    <a href="?currency=PHP" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                PHP                                                            </a>
+                                                    <a href="?currency=PLN" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                PLN                                                            </a>
+                                                    <a href="?currency=RUB" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                RUB                                                            </a>
+                                                    <a href="?currency=SEK" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                SEK                                                            </a>
+                                                    <a href="?currency=TRY" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                TL                                                            </a>
+                                                    <a href="?currency=USD" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                USD                                                            </a>
+                                                    <a href="?currency=VND" class="flex justify-between items-center rounded-xl py-3 px-6 text-slate-500 font-medium transition hover:text-slate-700 cursor-pointer hover:bg-slate-200/50 ">
+                                VND                                                            </a>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var $onlineAPI = "1";
+</script>
+
+<script>
+    var lang = {
+        credits: "%credit% kredi",
+        search: "Ara...",
+        loading: "Yükleniyor...",
+        confirm_delete: "Silmek istediğinizden emin misiniz?",
+        player_not_found: "Oyuncu bulunamadı!",
+        play_again: "Tekrar oyna",
+        spinning: "Çeviriliyor...",
+        apply: "Uygula",
+        remove: "Sil",
+        alert_btn_ok: "OK",
+        alert_btn_cancel: "İptal",
+        alert_btn_confirm: "Onayla",
+        alert_btn_buy_credit: "Kredi Yükle",
+        alert_title_success: "Başarılı!",
+        alert_title_error: "Hata!",
+        alert_title_warning: "Uyarı!",
+        alert_title_you_lost: "Kaybettin!",
+        alert_title_you_win: "Kazandınız!",
+        alert_message_server_address_copied: "Sunucu adresi kopyalandı!",
+        alert_message_something_went_wrong: "Bir şeyler yanlış. Sonra tekrar deneyin.",
+        alert_message_lottery_error_duration: "Tekrar çevirmek için %date%'e kadar beklemeniz gerekiyor.",
+        alert_message_lottery_you_lost: "Üzgünüm, kaybettiniz. Sonra tekrar deneyin.",
+        alert_message_lottery_you_win: "Tebrikler! <strong>%prize%</strong> kazandınız!",
+        alert_message_lottery_you_win_chest: "Ürün sandığınıza eklendi.",
+        alert_message_lottery_you_win_credit: "Mevcut Kredi: %credit%",
+        alert_message_lottery_credit_error: "Oynamak için yeterli krediniz bulunmuyor.",
+        alert_message_chest_confirm: "Onaylamadan önce oyunda olduğunuzdan emin olun, aksi takdirde ürün size ulaşmayabilir!",
+        alert_message_chest_sending: "Teslimat işlemi devam ediyor, lütfen bekleyin ve sayfadan ayrılmayın...",
+        alert_message_chest_sent: "Ürün başarıyla teslim edildi, Hayırlı Olsun!",
+        alert_message_chest_server_error: "Sunucuya bağlanırken bir sorun yaşandı, lütfen daha sonra tekrar deneyin.",
+        alert_message_chest_amount_error: "En fazla %amount% adet teslim alabilirsin!",
+        alert_message_login: "Bu işlemi yapabilmek için giriş yapın.",
+        help_voting_success: "Oy kullanımı başarıyla tamamlandı!",
+        alert_message_checkout_credit_error: "Yeterli krediniz bulunmuyor.",
+        alert_message_checkout_success: "Ödeme işlemi tamamlandı ve ürün sandığınıza eklendi.",
+        alert_message_checkout_quantity_error: "Geçerli bir adet giriniz!",
+        alert_message_checkout_stock_error: "Stok nedeniyle bu üründen daha fazla ekleyemezsin!",
+        alert_message_checkout_stock_error2: "Stokta yeterli ürün yok!",
+        alert_message_checkout_cart_empty_error: "Sepetiniz boş!",
+        alert_message_checkout_coupon_invalid: "Kupon geçersiz!",
+        alert_message_checkout_coupon_invalid_for_cart: "Bu kupon, sepetiniz için uygun değil!",
+        alert_message_checkout_coupon_used: "Bu kuponu daha önceden kullandınız!",
+        alert_message_checkout_coupon_expired: "Bu kuponun süresi bitmiş!",
+        alert_message_checkout_coupon_login: "Kupon kullanmak için giriş yapmanız gerekiyor!",
+        alert_message_checkout_coupon_success: "Kupon başarıyla uygulandı!",
+        alert_message_checkout_coupon_price: "Bu kuponu kullanabilmek için sepetiniz en az %amount% kredi değerinde olmalıdır!",
+        alert_message_not_found: "Not found!",
+        limited_stock: "Sınırlı Stok!",
+        out_of_stock: "Stok Yok!",
+        players_online: "çevrimiçi oyuncu",
+        users_online: "çevrimiçi kullanıcı"
+    }
+</script>
+  
+<style>
+    /* Yaprakların bulunacağı ana kapsayıcı */
+    #leaf-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Tıklamaları engellememesi için */
+        z-index: 999999;
+        overflow: hidden;
+    }
+
+    /* Yaprakların genel tasarımı */
+    .minecraft-leaf {
+        position: absolute;
+        top: -50px;
+        background-image: url('https://ccvaults.com/assets/80.%20Particles/leaf_1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* Varsayılan filtre: Griyi yeşile çevirme */
+        filter: sepia(100%) saturate(500%) hue-rotate(80deg) brightness(80%);
+        animation-name: fall, sway;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: 1, infinite;
+        animation-direction: normal, alternate;
+    }
+
+    /* Aşağı doğru düşme animasyonu */
+    @keyframes fall {
+        0% {
+            top: -50px;
+        }
+        100% {
+            top: 110vh; /* Ekranın en altına kadar inmesi için */
+        }
+    }
+
+    /* Sağa sola sallanma animasyonu */
+    @keyframes sway {
+        0% {
+            transform: translateX(0px) rotate(0deg);
+        }
+        100% {
+            transform: translateX(60px) rotate(45deg);
+        }
+    }
+</style>
+
+<div id="leaf-container"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById('leaf-container');
+        if (!container) return;
+
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.classList.add('minecraft-leaf');
+
+            // Rastgele başlangıç pozisyonu (Ekranın genişliğine göre %0 - %100 arası)
+            const startLeft = Math.random() * 100;
+            
+            // Rastgele düşme süresi (6 ile 12 saniye arası)
+            const fallDuration = 6 + Math.random() * 6;
+            
+            // Rastgele sağa sola sallanma süresi (1.5 ile 3.5 saniye arası)
+            const swayDuration = 1.5 + Math.random() * 2;
+            
+            // Rastgele yaprak boyutu (15px ile 35px arası)
+            const size = 15 + Math.random() * 20;
+            
+            // Yeşilin farklı tonlarını elde etmek için rastgele renk filtresi ayarı
+            // Hue (renk tonu) 70 ile 120 derece arası: Sarımsı yeşilden koyu yeşile
+            const hue = 70 + Math.random() * 50; 
+            const brightness = 60 + Math.random() * 40; // %60 ile %100 arası parlaklık
+
+            // Stilleri yaprağa uygula
+            leaf.style.left = startLeft + 'vw';
+            leaf.style.width = size + 'px';
+            leaf.style.height = size + 'px';
+            leaf.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+            leaf.style.filter = `sepia(100%) saturate(500%) hue-rotate(${hue}deg) brightness(${brightness}%)`;
+
+            container.appendChild(leaf);
+
+            // Yaprak ekrandan çıktıktan sonra siteyi yormaması için DOM'dan temizle
+            setTimeout(() => {
+                leaf.remove();
+            }, fallDuration * 1000);
+        }
+
+        // Her 400 milisaniyede bir yeni yaprak oluştur (Daha yoğun istersen sayıyı küçültebilirsin)
+        setInterval(createLeaf, 400);
+    });
+</script>
+
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+        document.addEventListener('DOMContentLoaded', function () {
+            cookieconsent.run({"notice_banner_type": "simple", "consent_type": "express", "palette": "dark", "language": "tr", "page_load_consent_levels": ["strictly-necessary", "functionality", "tracking", "targeting"], "notice_banner_reject_button_hide": true, "preferences_center_close_button_hide": false, "page_refresh_confirmation_buttons": false, "website_name": "LeraCraft", "website_privacy_policy_url": "https://leracraft.com/privacy"});
+        });
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/16.1.0/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+
+<script src="/assets/moss/js/main.min.1773581477.js"></script>
+<script src="/assets/moss/js/main.new.1773581477.js"></script>
+
+
+
+
+
+</body>
+</html>
